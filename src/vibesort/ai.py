@@ -3,7 +3,7 @@ from typing_extensions import Literal
 import openai
 from pydantic import BaseModel
 from typing import TypeVar
-
+import time
 
 class VibesortResponse(BaseModel):
     sorted_array: list[int]
@@ -23,6 +23,10 @@ def vibesort(array: list[int]) -> VibesortResponse:
 
 T = TypeVar("T", bound=BaseModel)
 
+# Made by programmer extrodinare (not) MilesWK
+def vibeless(arrry: list[int]) -> NotVibesortResponse: # you know, for those who like the old way.
+    time.sleep(10)                                     # to tell them the old way stinks.
+    return array.sort()                                # then gives the old way response.
 
 def structured_output(
     content: str,
